@@ -1,0 +1,134 @@
+/* IMPORTS */
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./fonts/Inter-Bold.woff2?v=3.11') format('woff2'),
+    url('./fonts/Inter-Bold.woff?v=3.11') format('woff');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./fonts/Inter-Regular.woff2?v=3.11') format('woff2'),
+    url('./fonts/Inter-Regular.woff?v=3.11') format('woff');
+}
+
+/* VARIABLES */
+
+:root {
+  --color-black: #161616;
+  --color-white: #ffffff;
+
+  --font-size: 1.8rem;
+  --font-primary: 'Inter';
+}
+
+/* RESET */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: var(--color-black);
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.8rem;
+  font-family: var(--font-primary);
+  font-weight: 400;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.container {
+  padding: 5rem 20rem;
+}
+
+.header {
+  width: 40rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: end;
+  margin-left: auto;
+}
+
+.logo {
+  margin-right: auto;
+}
+
+.logo__img {
+  height: 6rem;
+  display: block;
+  transition: transform 5s ease-in-out;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  outline: 0.1rem solid transparent;
+}
+
+.logo__link:hover > .logo__img {
+  transform: rotate(5turn);
+}
+
+.navbar__link {
+  font-weight: 700;
+  font-size: 2.4rem;
+}
+
+.main-content {
+  display: flex;
+  margin-top: 2rem;
+  justify-content: flex-end;
+}
+
+.hero {
+  display: flex;
+  width: 100%;
+  position: relative;
+  justify-content: flex-end;
+}
+
+.hero__text {
+  font-size: 12.8rem;
+  position: absolute;
+  left: 0;
+  top: 4rem;
+  z-index: 2;
+}
+
+.hero__img {
+  height: 50rem;
+  width: 40rem;
+  background-size: cover;
+  background-position: center;
+  background-image: linear-gradient(-134deg, #fc466b 0%, #3f5efb 100%),
+    url('../img/hero-image.png');
+  background-blend-mode: color;
+  opacity: 0.8;
+}
