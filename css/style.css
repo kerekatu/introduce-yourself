@@ -29,6 +29,15 @@
   --font-primary: 'Inter';
 }
 
+:root > .dark {
+  --color-black: #ffffff;
+  --color-white: #161616;
+  --color-red: #fc466b;
+
+  --font-size: 1.8rem;
+  --font-primary: 'Inter';
+}
+
 /* RESET */
 
 * {
@@ -71,11 +80,20 @@ body {
   color: var(--color-black);
   line-height: 1.6;
   min-height: 100vh;
+  background-color: var(--color-white);
 }
+
+/* CLASSES */
 
 .wrapper {
   display: grid;
   grid-template-rows: 1fr max-content;
+}
+
+.home {
+  animation: 2s scaleUp cubic-bezier(0.19, 1, 0.22, 1) 0.5s forwards;
+  transform-origin: center;
+  opacity: 0;
 }
 
 .container {
@@ -148,15 +166,14 @@ body {
 }
 
 .btn-cta {
+  display: inline-block;
   padding: 1rem 5rem;
   font-family: var(--font-primary);
   font-weight: 400;
   font-size: 2.4rem;
   background: linear-gradient(-134deg, #fc466b 0%, #3f5efb 100%);
-  border: none;
   border-radius: 30rem;
-  color: var(--color-white);
-  cursor: pointer;
+  color: var(--color-white) !important;
   transition: all 0.2s;
 }
 
@@ -177,6 +194,36 @@ body {
   margin-left: auto;
 }
 
+.dark .main-content {
+  align-self: flex-start;
+}
+
+.info__text {
+  margin-bottom: 2rem;
+}
+
+.info__heading {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.info__heading-2 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.info__paragraph,
+.info__item {
+  opacity: 0.8;
+  hyphens: auto;
+}
+
+.info__list {
+  list-style: circle;
+  margin-left: 3rem;
+}
+
 .footer {
   align-self: end;
   width: 100%;
@@ -184,6 +231,16 @@ body {
   clip-path: polygon(0 60%, 100% 10%, 100% 100%, 0% 100%);
   background-color: var(--color-black);
 }
+
+.highlight {
+  text-decoration: underline !important;
+}
+
+.highlight:hover {
+  opacity: 0.8;
+}
+
+/* MEDIA QUERIES */
 
 @media only screen and (max-width: 62.5em) {
   html {
@@ -251,5 +308,31 @@ body {
   .hero__img {
     height: 55rem;
     width: 45rem;
+  }
+}
+
+/* ANIMATIONS */
+
+@keyframes slideBtm {
+  0% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
